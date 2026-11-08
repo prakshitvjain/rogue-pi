@@ -37,7 +37,7 @@ done
 responder -I eth0 > responder.txt &
 
 # SMB Enum 
-for IP in $(WIN_PORT445.txt); do
+for IP in $(cat WIN_PORT445.txt); do
   smbclient -L "$IP" -N > smb-${IP}.txt
 done
 
